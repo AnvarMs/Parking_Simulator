@@ -1,0 +1,63 @@
+using UnityEngine;
+using Cinemachine;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
+
+public class MobileCameraController : MonoBehaviour
+{
+    public CinemachineFreeLook freeLookCamera;
+    public Transform carTransform;
+    private Vector2 touchDelta;
+
+    private InputAction touchPositionAction;
+    private InputAction touchDeltaAction;
+
+    private void Awake()
+    {
+        var inputActions = new PlayerInputActions();
+        inputActions.Camera.Enable();
+
+        touchPositionAction = inputActions.Camera.TouchPosition;
+        touchDeltaAction = inputActions.Camera.TouchDelta;
+    }
+
+    void Start()
+    {
+        freeLookCamera.Follow = carTransform;
+        freeLookCamera.LookAt = carTransform;
+    }
+
+    void Update()
+    {
+        if (IsPointerOverUIObject())
+        {
+            return; // Skip camera rotation logic
+        }
+        if (Touchscreen.current.primaryTouch.press.isPressed)
+        {
+            touchDelta = touchDeltaAction.ReadValue<Vector2>();
+            freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * 1.5f; // Adjust sensitivity as needed
+            freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * 0.05f;
+        }
+    }
+    private bool IsPointerOverUIObject()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            PointerEventData eventData = new PointerEventData(EventSystem.current)
+            {
+                position = touch.position
+            };
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+            return results.Count > 0;
+        }
+
+        return EventSystem.current.IsPointerOverGameObject();
+    }
+}
+
+
+

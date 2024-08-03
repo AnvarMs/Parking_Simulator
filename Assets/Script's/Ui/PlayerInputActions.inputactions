@@ -1,0 +1,54 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "b935517b-3c18-4c75-bf9b-520fb3e56e84",
+            "actions": [
+                {
+                    "name": "TouchPosition",
+                    "type": "Button",
+                    "id": "57c32ec3-245d-4a73-8d92-a1c8b400e3e7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TouchDelta",
+                    "type": "Button",
+                    "id": "beafb8bf-a65f-4ea3-bf58-2b67973e446f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6d766e21-e07a-4887-9957-6ac819f75a80",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b01a717f-9064-44f5-8b41-e88fdde4c1e2",
+                    "path": "<Touchscreen>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchDelta",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
