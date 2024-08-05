@@ -1,0 +1,85 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\assets\\script\u0027s\\menucontroler\\carholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|solutionrelative:assets\\script\u0027s\\menucontroler\\carholder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\assets\\script\u0027s\\ui\\playerinputactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|solutionrelative:assets\\script\u0027s\\ui\\playerinputactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\assets\\script\u0027s\\aicar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|solutionrelative:assets\\script\u0027s\\aicar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\assets\\script\u0027s\\ui\\inputs\\mobilecameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B7AECF-666D-9279-BE2B-72DE6CF9B0B0}|Assembly-CSharp.csproj|solutionrelative:assets\\script\u0027s\\ui\\inputs\\mobilecameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarHolder.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\MenuControler\\CarHolder.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\u0027s\\MenuControler\\CarHolder.cs",
+              "ToolTip": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\MenuControler\\CarHolder.cs",
+              "RelativeToolTip": "Assets\\Script\u0027s\\MenuControler\\CarHolder.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwA4AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T04:57:44.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MobileCameraController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\Ui\\Inputs\\MobileCameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\u0027s\\Ui\\Inputs\\MobileCameraController.cs",
+              "ToolTip": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\Ui\\Inputs\\MobileCameraController.cs",
+              "RelativeToolTip": "Assets\\Script\u0027s\\Ui\\Inputs\\MobileCameraController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T07:52:17.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerInputActions.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\Ui\\PlayerInputActions.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\u0027s\\Ui\\PlayerInputActions.cs",
+              "ToolTip": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\Ui\\PlayerInputActions.cs",
+              "RelativeToolTip": "Assets\\Script\u0027s\\Ui\\PlayerInputActions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T06:55:34.104Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AICar.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\AICar.cs",
+              "RelativeDocumentMoniker": "Assets\\Script\u0027s\\AICar.cs",
+              "ToolTip": "C:\\Users\\USER\\Unity_Worck\\Parking_Simulator\\Assets\\Script\u0027s\\AICar.cs",
+              "RelativeToolTip": "Assets\\Script\u0027s\\AICar.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAQwOYAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-03T06:55:31.717Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

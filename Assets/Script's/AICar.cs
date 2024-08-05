@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.AI;
+
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
+
 public class AICar : MonoBehaviour
 {
     
@@ -81,7 +81,7 @@ public class AICar : MonoBehaviour
     {
         
         AplayMotor();
-        AplaySteering(InputSteering);
+        AplaySteering();
         MeshUpdate();
         AplayBrake();
         AiSencers();
@@ -90,38 +90,109 @@ public class AICar : MonoBehaviour
     void AiSencers()
     {
         RaycastHit hit;
+        bool isObstacleDetected = false;
 
-        Vector3 starPos= transform.position;
+        // Calculate the start positions for the sensors based on the vehicle's orientation
+        Vector3 carCenter = transform.position;
+        float carHeightOffset = GetComponent<Collider>().bounds.size.y / 2;
 
-        //friend sensore
-        starPos.z += rayZpose;
-        if(Physics.Raycast(starPos,transform.forward ,out hit,raylength))
+        Vector3 forwardSensorPos = carCenter + transform.forward * rayZpose + Vector3.up * carHeightOffset;
+        Vector3 forwardRightSensorPos = forwardSensorPos + transform.right * rayXpose;
+        Vector3 forwardLeftSensorPos = forwardSensorPos - transform.right * rayXpose;
+
+        // 30-degree angles for additional sensors
+        Vector3 right30DegDirection = Quaternion.AngleAxis(30, Vector3.up) * transform.forward;
+        Vector3 left30DegDirection = Quaternion.AngleAxis(-30, Vector3.up) * transform.forward;
+
+        // Forward sensor
+        if (Physics.Raycast(forwardSensorPos, transform.forward, out hit, raylength, layerMask))
         {
-            
+            isObstacleDetected = true;
+            Debug.DrawLine(forwardSensorPos, hit.point, Color.red);
+            InputMotor = 0;
+            InputBreake = 1;
         }
-        Debug.DrawLine(starPos,hit.point);
-
-        //friend right sensor;
-        starPos.x += rayXpose;
-        if (Physics.Raycast(starPos, transform.forward, out hit, raylength))
+        else
         {
-
+            Debug.DrawLine(forwardSensorPos, forwardSensorPos + transform.forward * raylength, Color.green);
         }
-        Debug.DrawLine(starPos, hit.point);
 
-        // fiend left sensor;
-        starPos.x -= 2*rayXpose;
-        if (Physics.Raycast(starPos, transform.forward, out hit, raylength))
+        // Forward right sensor
+        if (Physics.Raycast(forwardRightSensorPos, transform.forward, out hit, raylength, layerMask))
         {
-
+            isObstacleDetected = true;
+            Debug.DrawLine(forwardRightSensorPos, hit.point, Color.red);
+            InputSteering = -1;
         }
-        Debug.DrawLine(starPos, hit.point);
+        else
+        {
+            Debug.DrawLine(forwardRightSensorPos, forwardRightSensorPos + transform.forward * raylength, Color.green);
+        }
 
+        // Forward left sensor
+        if (Physics.Raycast(forwardLeftSensorPos, transform.forward, out hit, raylength, layerMask))
+        {
+            isObstacleDetected = true;
+            Debug.DrawLine(forwardLeftSensorPos, hit.point, Color.red);
+            InputSteering = 1;
+        }
+        else
+        {
+            Debug.DrawLine(forwardLeftSensorPos, forwardLeftSensorPos + transform.forward * raylength, Color.green);
+        }
 
+        // Right 30-degree sensor
+        if (Physics.Raycast(forwardRightSensorPos, right30DegDirection, out hit, raylength, layerMask))
+        {
+            isObstacleDetected = true;
+            Debug.DrawLine(forwardRightSensorPos, hit.point, Color.red);
+            InputSteering = -1;
+        }
+        else
+        {
+            Debug.DrawLine(forwardRightSensorPos, forwardSensorPos + right30DegDirection * raylength, Color.green);
+        }
+
+        // Left 30-degree sensor
+        if (Physics.Raycast(forwardLeftSensorPos, left30DegDirection, out hit, raylength, layerMask))
+        {
+            isObstacleDetected = true;
+            Debug.DrawLine(forwardLeftSensorPos, hit.point, Color.red);
+            InputSteering = 1;
+        }
+        else
+        {
+            Debug.DrawLine(forwardLeftSensorPos, forwardSensorPos + left30DegDirection * raylength, Color.green);
+        }
+
+        // Downward sensor
+        Vector3 downSensorPos = carCenter - Vector3.up * carHeightOffset;
+        if (Physics.Raycast(downSensorPos, Vector3.down, out hit, raylength, layerMask))
+        {
+            isObstacleDetected = true;
+            Debug.DrawLine(downSensorPos, hit.point, Color.red);
+            InputMotor = 0;
+            InputBreake = 1;
+        }
+        else
+        {
+            Debug.DrawLine(downSensorPos, downSensorPos + Vector3.down * raylength, Color.green);
+        }
+
+        // Adjust car behavior if an obstacle is detected
+        if (!isObstacleDetected)
+        {
+            GetInput();
+        }
     }
 
 
-    void GetInput()
+
+
+
+
+
+void GetInput()
     {
         
 
@@ -224,10 +295,10 @@ public class AICar : MonoBehaviour
         RR_Wheel_Collider.motorTorque = MotorPower * InputMotor;
     }
 
-    void AplaySteering(float steerAngle)
+    void AplaySteering()
     {
-        FL_Wheel_Collider.steerAngle = Mathf.Lerp(FL_Wheel_Collider.steerAngle, steerAngle * SteeringPower, Time.deltaTime * 5);
-        FR_Wheel_Collider.steerAngle = Mathf.Lerp(FR_Wheel_Collider.steerAngle, steerAngle * SteeringPower, Time.deltaTime * 5);
+        FL_Wheel_Collider.steerAngle = Mathf.Lerp(FL_Wheel_Collider.steerAngle, InputSteering * SteeringPower, Time.deltaTime * 5);
+        FR_Wheel_Collider.steerAngle = Mathf.Lerp(FR_Wheel_Collider.steerAngle, InputSteering * SteeringPower, Time.deltaTime * 5);
     }
 
     void MeshUpdate()

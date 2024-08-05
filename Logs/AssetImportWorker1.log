@@ -15,7 +15,7 @@ C:/Users/USER/Unity_Worck/Parking_Simulator
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-51370
+53758
 Successfully changed project path to: C:/Users/USER/Unity_Worck/Parking_Simulator
 C:/Users/USER/Unity_Worck/Parking_Simulator
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/USER/Unity_Worck/Parking_Simulator
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [11700] Host "[IP] 10.0.11.94 [Port] 0 [Flags] 2 [Guid] 2258563726 [EditorId] 2258563726 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-5BO6DFA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [32760] Host "[IP] 10.0.11.94 [Port] 0 [Flags] 2 [Guid] 160351408 [EditorId] 160351408 [Version] 1048832 [Id] WindowsEditor(7,CHARLysPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [11700] Host "[IP] 10.0.11.94 [Port] 0 [Flags] 2 [Guid] 2258563726 [EditorId] 2258563726 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-5BO6DFA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [32760] Host "[IP] 10.0.11.94 [Port] 0 [Flags] 2 [Guid] 160351408 [EditorId] 160351408 [Version] 1048832 [Id] WindowsEditor(7,CHARLysPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
-Refreshing native plugins compatible for Editor in 372.28 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 18.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.23f1 (dbb3f7c5b5c6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/Resources/UnitySubsystems
@@ -66,61 +66,54 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     2010 MB
     Driver:   27.21.14.5749
+Invalid texture used for cursor - check importer settings or texture creation. Texture must be RGBA32, readable, have alphaIsTransparency enabled and have no mip chain.
+Failed to set the cursor because the specified texture ('steering-wheel-car-In Game') was not CPU accessible.
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56916
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.23f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.016022 seconds.
-- Loaded All Assemblies, in  1.152 seconds
+Registered in 0.011832 seconds.
+- Loaded All Assemblies, in  0.549 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-CommandWithNoStdoutInvokationFailure: Unable to start ADB server. Please make sure the Android SDK is installed and is properly configured in the Editor. See the Console for more details.
-  at UnityEditor.Android.Command.RunWithShellExecute (System.String command, System.String args, System.String workingdir, System.String errorMsg) [0x00060] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.ADB.StartServer () [0x00013] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.ADB.Run (System.String[] command, UnityEditor.Android.Command+WaitingForProcessToExit waitingForProcessToExit, System.String errorMsg) [0x0000b] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x002ae] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00039] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00081] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Android.TargetExtension.OnLoad () [0x000ad] in <e0f86d9fe11d48b2b406f2dbac04ce1b>:0 
-  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x0009d] in <1899c5bd2a6d466081cd705bee01d689>:0 
-
+Android Extension - Scanning For ADB Devices 369 ms
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  9.366 seconds
-Domain Reload Profiling: 10516ms
-	BeginReloadAssembly (344ms)
+- Finished resetting the current domain, in  0.867 seconds
+Domain Reload Profiling: 1414ms
+	BeginReloadAssembly (173ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (111ms)
-	RebuildNativeTypeToScriptingClass (33ms)
-	initialDomainReloadingComplete (153ms)
-	LoadAllAssembliesAndSetupDomain (507ms)
-		LoadAssemblies (342ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (84ms)
+	LoadAllAssembliesAndSetupDomain (221ms)
+		LoadAssemblies (171ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (500ms)
-			TypeCache.Refresh (497ms)
-				TypeCache.ScanAssembly (451ms)
+		AnalyzeDomain (218ms)
+			TypeCache.Refresh (216ms)
+				TypeCache.ScanAssembly (195ms)
 			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (9368ms)
+	FinalizeReload (868ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (9193ms)
+		SetupLoadedEditorAssemblies (781ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8510ms)
-			SetLoadedEditorAssemblies (15ms)
+			InitializePlatformSupportModulesInManaged (519ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (9ms)
-			ProcessInitializeOnLoadAttributes (483ms)
-			ProcessInitializeOnLoadMethodAttributes (176ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (180ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -128,8 +121,8 @@ Domain Reload Profiling: 10516ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.401 seconds
-Refreshing native plugins compatible for Editor in 9.72 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.289 seconds
+Refreshing native plugins compatible for Editor in 6.77 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Package Manager log level set to [2]
@@ -137,48 +130,48 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.643 seconds
-Domain Reload Profiling: 5038ms
-	BeginReloadAssembly (452ms)
+- Finished resetting the current domain, in  1.318 seconds
+Domain Reload Profiling: 2603ms
+	BeginReloadAssembly (234ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (20ms)
+		DisableScriptedObjects (9ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (67ms)
-	RebuildCommonClasses (116ms)
-	RebuildNativeTypeToScriptingClass (47ms)
-	initialDomainReloadingComplete (116ms)
-	LoadAllAssembliesAndSetupDomain (1662ms)
-		LoadAssemblies (1077ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (115ms)
+	LoadAllAssembliesAndSetupDomain (871ms)
+		LoadAssemblies (603ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (837ms)
-			TypeCache.Refresh (706ms)
-				TypeCache.ScanAssembly (651ms)
-			ScanForSourceGeneratedMonoScriptInfo (88ms)
-			ResolveRequiredComponents (39ms)
-	FinalizeReload (2644ms)
+		AnalyzeDomain (396ms)
+			TypeCache.Refresh (327ms)
+				TypeCache.ScanAssembly (295ms)
+			ScanForSourceGeneratedMonoScriptInfo (45ms)
+			ResolveRequiredComponents (21ms)
+	FinalizeReload (1319ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2033ms)
+		SetupLoadedEditorAssemblies (997ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (153ms)
-			SetLoadedEditorAssemblies (12ms)
+			InitializePlatformSupportModulesInManaged (42ms)
+			SetLoadedEditorAssemblies (10ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (216ms)
-			ProcessInitializeOnLoadAttributes (1434ms)
-			ProcessInitializeOnLoadMethodAttributes (199ms)
-			AfterProcessingInitializeOnLoad (19ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (681ms)
+			ProcessInitializeOnLoadMethodAttributes (112ms)
+			AfterProcessingInitializeOnLoad (9ms)
 			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (20ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.30 seconds
-Refreshing native plugins compatible for Editor in 210.45 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 7.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5977 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 93 unused Assets / (476.0 KB). Loaded Objects now: 6438.
-Memory consumption went from 240.8 MB to 240.3 MB.
-Total: 45.331500 ms (FindLiveObjects: 4.773700 ms CreateObjectMapping: 6.643400 ms MarkObjects: 33.307400 ms  DeleteObjects: 0.604800 ms)
+Unloading 5990 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 96 unused Assets / (501.9 KB). Loaded Objects now: 6464.
+Memory consumption went from 249.8 MB to 249.4 MB.
+Total: 6.139400 ms (FindLiveObjects: 0.597600 ms CreateObjectMapping: 1.022100 ms MarkObjects: 4.235400 ms  DeleteObjects: 0.283300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -195,17 +188,169 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 52752.313192 seconds.
-  path: Assets/Scenes/StrartingScene.unity
-  artifactKey: Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/StrartingScene.unity using Guid(99c9720ab356a0642a771bea13969a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac9b1c69805b99bd8776e9f3d92849bd') in 0.007292 seconds
+  Time since last request: 9090.315294 seconds.
+  path: Assets/Hatchback and Sedan/prefabs/SEDAN.prefab
+  artifactKey: Guid(4f9a1168ab73c884bb900de3b6909c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/prefabs/SEDAN.prefab using Guid(4f9a1168ab73c884bb900de3b6909c10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6712087e1a146a9263815d174b6fcd0c') in 0.562662 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 125
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Readme.asset
-  artifactKey: Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Readme.asset using Guid(8105016687592461f977c054a80ce2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13b11e6936975384c89f4f7e6268c69a') in 0.029998 seconds
+  Time since last request: 4.864318 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/HATCHBACK_1988.FBX
+  artifactKey: Guid(6e22a8f7bfe859748818159ce3613f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/HATCHBACK_1988.FBX using Guid(6e22a8f7bfe859748818159ce3613f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8595633c407af980af495f6efd78d9b8') in 0.222307 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 87
+========================================================================
+Received Import Request.
+  Time since last request: 0.832529 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/SEDAN_COLLIDER.FBX
+  artifactKey: Guid(58794aed2af04154aa437b05d7c167f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/SEDAN_COLLIDER.FBX using Guid(58794aed2af04154aa437b05d7c167f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c02067bd029c169b5ee671af8471b75e') in 0.041138 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 1.445833 seconds.
+  path: Assets/Hatchback and Sedan/textures/HATCHBACK_1988.psd
+  artifactKey: Guid(30e6dd9acf064c14a8f41b1c6008a2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/textures/HATCHBACK_1988.psd using Guid(30e6dd9acf064c14a8f41b1c6008a2b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dacf945ae7cac7d33e56e6c59e77bd71') in 0.117675 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Hatchback and Sedan/textures/SEDAN.png
+  artifactKey: Guid(1d5d959d961ac57428357a8b41790286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/textures/SEDAN.png using Guid(1d5d959d961ac57428357a8b41790286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98b61c38361cb903dee46bc07b90627a') in 0.053069 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 74.546406 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988.mat
+  artifactKey: Guid(8b3ef602f5de7e44fb2613b044fa2008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988.mat using Guid(8b3ef602f5de7e44fb2613b044fa2008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26133dd8004d5d86d11ac4e565976924') in 0.077347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_MIRRORS.mat
+  artifactKey: Guid(66c9286a7fe9016409ff1a9cbfca196d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_MIRRORS.mat using Guid(66c9286a7fe9016409ff1a9cbfca196d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03ee8a0da5de4c48414b9c2e23bf894c') in 0.071527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_GLASS.mat
+  artifactKey: Guid(41769b539e248db4c90886964a88c143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_GLASS.mat using Guid(41769b539e248db4c90886964a88c143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b24e762c1de885647177590d6d01fec3') in 0.057314 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 13.485956 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN.mat
+  artifactKey: Guid(cf8f951ad11fad745a3633b12fa09ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN.mat using Guid(cf8f951ad11fad745a3633b12fa09ed4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e439ec6249af02d7dd861f4639d7cf67') in 0.065388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS.mat
+  artifactKey: Guid(9f8a8df52a6a010419a54c0d9d135121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS.mat using Guid(9f8a8df52a6a010419a54c0d9d135121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eceaba5bc968e7c42ed23be28909cc8') in 0.048643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS_LAMPS.mat
+  artifactKey: Guid(0665f626cc5314f42800fb7ae6899d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS_LAMPS.mat using Guid(0665f626cc5314f42800fb7ae6899d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc947da3ec3992b446ac332327b23d1c') in 0.041880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 18.374497 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS.mat
+  artifactKey: Guid(9f8a8df52a6a010419a54c0d9d135121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS.mat using Guid(9f8a8df52a6a010419a54c0d9d135121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdaab01b5a259300071828693c4ba838') in 0.078487 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS_LAMPS.mat
+  artifactKey: Guid(0665f626cc5314f42800fb7ae6899d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/SEDAN/materials/SEDAN_GLASS_LAMPS.mat using Guid(0665f626cc5314f42800fb7ae6899d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68ba988f44ddb48208fd988d9d84c731') in 0.065001 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 42.470786 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/HATCHBACK_1988.FBX
+  artifactKey: Guid(6e22a8f7bfe859748818159ce3613f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/HATCHBACK_1988.FBX using Guid(6e22a8f7bfe859748818159ce3613f31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '960719901a617cbdf8c7777ece8ce47e') in 0.198007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 87
+========================================================================
+Received Import Request.
+  Time since last request: 0.179082 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_bulbs.mat
+  artifactKey: Guid(c90a675775f754542bb64d4882c99929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_bulbs.mat using Guid(c90a675775f754542bb64d4882c99929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '359ccdd18cbfe66730ed20048787351b') in 0.093465 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_RIMS.mat
+  artifactKey: Guid(41cfa8148b1e9c443aaeb464c62d1c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_RIMS.mat using Guid(41cfa8148b1e9c443aaeb464c62d1c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '822b604627fdc102bff22a451759becf') in 0.065334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_PAINT.mat
+  artifactKey: Guid(2c88e51cbc480374297f5ded252d3e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_PAINT.mat using Guid(2c88e51cbc480374297f5ded252d3e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854119db2b84b64765073ae65f1ba9d0') in 0.250541 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 206.627478 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988.mat
+  artifactKey: Guid(8b3ef602f5de7e44fb2613b044fa2008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988.mat using Guid(8b3ef602f5de7e44fb2613b044fa2008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5949db51a4e781760fcdcb083a1fe90c') in 0.073168 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_RIMS.mat
+  artifactKey: Guid(41cfa8148b1e9c443aaeb464c62d1c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_RIMS.mat using Guid(41cfa8148b1e9c443aaeb464c62d1c04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5859ced9330859b0852987c2a5279295') in 0.068353 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_PAINT.mat
+  artifactKey: Guid(2c88e51cbc480374297f5ded252d3e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_PAINT.mat using Guid(2c88e51cbc480374297f5ded252d3e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3023af3f59b58ee83526d1ffb31f2b70') in 0.084053 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_bulbs.mat
+  artifactKey: Guid(c90a675775f754542bb64d4882c99929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Hatchback and Sedan/meshes/HATCHBACK/materials/HATCHBACK_1988_bulbs.mat using Guid(c90a675775f754542bb64d4882c99929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cebc4dd50a6543a610bc2082701ef4cc') in 0.046434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3

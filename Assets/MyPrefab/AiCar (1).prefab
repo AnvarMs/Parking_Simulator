@@ -449,7 +449,6 @@ MonoBehaviour:
   CorrentTransform: {fileID: 0}
   reachDistence: 4
   reverseDistence: 10
-  size: 1.2
   position: {fileID: 1684598440978595165}
   layerMask:
     serializedVersion: 2
@@ -468,6 +467,9 @@ MonoBehaviour:
   SteeringPower: 40
   BreakePower: 10000
   Inbreak: 0
+  rayZpose: 0.5
+  raylength: 4
+  rayXpose: 1
 --- !u!65 &5535281801121555494
 BoxCollider:
   m_ObjectHideFlags: 0
