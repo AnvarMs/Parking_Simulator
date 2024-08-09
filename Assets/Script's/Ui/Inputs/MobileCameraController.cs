@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class MobileCameraController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
-    public Transform carTransform;
+    private Transform carTransform;
     private Vector2 touchDelta;
 
     private InputAction touchPositionAction;
@@ -22,25 +22,46 @@ public class MobileCameraController : MonoBehaviour
         touchDeltaAction = inputActions.Camera.TouchDelta;
     }
 
-    void Start()
+    private void Start()
     {
-        freeLookCamera.Follow = carTransform;
-        freeLookCamera.LookAt = carTransform;
+        AssignCarTransform();
     }
 
-    void Update()
+    private void Update()
     {
         if (IsPointerOverUIObject())
         {
-            return; // Skip camera rotation logic
+            return; // Skip camera rotation logic if touching UI
         }
+
         if (Touchscreen.current.primaryTouch.press.isPressed)
         {
-            touchDelta = touchDeltaAction.ReadValue<Vector2>();
-            freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * 1.5f; // Adjust sensitivity as needed
-            freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * 0.05f;
+            HandleCameraRotation();
         }
     }
+
+    private void AssignCarTransform()
+    {
+        GameObject[] cars = GameObject.FindGameObjectsWithTag("Player");
+        if (cars.Length > 0)
+        {
+            carTransform = cars[0].transform;
+            freeLookCamera.Follow = carTransform;
+            freeLookCamera.LookAt = carTransform;
+        }
+        else
+        {
+            Debug.LogError("No car with tag 'Player' found in the scene.");
+        }
+    }
+
+    private void HandleCameraRotation()
+    {
+        touchDelta = touchDeltaAction.ReadValue<Vector2>();
+        freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * 1.5f; // Adjust sensitivity as needed
+        freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * 0.05f;
+    }
+
     private bool IsPointerOverUIObject()
     {
         if (Input.touchCount > 0)
@@ -58,6 +79,3 @@ public class MobileCameraController : MonoBehaviour
         return EventSystem.current.IsPointerOverGameObject();
     }
 }
-
-
-

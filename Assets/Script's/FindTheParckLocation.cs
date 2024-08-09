@@ -8,6 +8,10 @@ public class FindTheParkLocation : MonoBehaviour
     public GameObject ParkingMark;
 
     // Update is called once per frame
+    private void Awake()
+    {
+        ParkingMark = GameObject.Find("ParkingMarck");
+    }
     void Update()
     {
         // Calculate the direction vector from the arrow to the parking mark

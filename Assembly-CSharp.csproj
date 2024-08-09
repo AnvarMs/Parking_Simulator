@@ -64,6 +64,7 @@
     <Compile Include="Assets\Script&apos;s\Ui\MenuScene_Manager.cs" />
     <Compile Include="Assets\Script&apos;s\CarControler.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\SketchfabUI.cs" />
+    <Compile Include="Assets\Script&apos;s\CarSpawner.cs" />
     <Compile Include="Assets\Script&apos;s\AICar.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\SketchfabLogger.cs" />
@@ -71,12 +72,14 @@
     <Compile Include="Assets\Script&apos;s\ParkingCheck.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\AssetBrowser\SketchfabBrowserManager.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\AssetBrowser\SketchfabBrowserWindow.cs" />
+    <Compile Include="Assets\Script&apos;s\CarManager.cs" />
     <Compile Include="Assets\Script&apos;s\Graph.cs" />
     <Compile Include="Assets\Script&apos;s\FindTheParckLocation.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\Resizer.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\SketchfabApi.cs" />
     <Compile Include="Assets\Script&apos;s\Ui\PlayerInputActions.cs" />
     <Compile Include="Assets\Script&apos;s\CarSoundController.cs" />
+    <Compile Include="Assets\Script&apos;s\CarSelecter.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\SketchfabPlugin.cs" />
     <Compile Include="Assets\Script&apos;s\CollideDetection.cs" />
     <Compile Include="Assets\Sketchfab For Unity\Scripts\SketchfabImporterWindow.cs" />
@@ -87,6 +90,7 @@
     <Compile Include="Assets\Script&apos;s\SteeringWheelUIController.cs" />
     <Compile Include="Assets\Script&apos;s\Ui\Inputs\MobileCameraController.cs" />
     <Compile Include="Assets\Script&apos;s\MenuControler\CarHolder.cs" />
+    <Compile Include="Assets\Script&apos;s\Ui\UIController.cs" />
     <Compile Include="Assets\Script&apos;s\Ui\ButtounSpriteTogler.cs" />
   </ItemGroup>
   <ItemGroup>

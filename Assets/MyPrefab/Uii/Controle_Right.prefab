@@ -217,10 +217,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CarControler, Assembly-CSharp
-          m_MethodName: Accilerater
-          m_Mode: 4
+        - m_Target: {fileID: 6347009148409033902}
+          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+          m_MethodName: OnAcceleratePress
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -233,10 +233,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CarControler, Assembly-CSharp
-          m_MethodName: Accilerater
-          m_Mode: 4
+        - m_Target: {fileID: 6347009148409033902}
+          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+          m_MethodName: OnAccelerateRelease
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -690,10 +690,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CarControler, Assembly-CSharp
-          m_MethodName: BreakLeverPress
-          m_Mode: 6
+        - m_Target: {fileID: 6347009148409033902}
+          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+          m_MethodName: OnBrakePress
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -706,10 +706,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: CarControler, Assembly-CSharp
-          m_MethodName: BreakLeverPress
-          m_Mode: 6
+        - m_Target: {fileID: 6347009148409033902}
+          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+          m_MethodName: OnBrakeRelease
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1256,6 +1256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5292621183299803562}
+  - component: {fileID: 6347009148409033902}
   m_Layer: 5
   m_Name: Controle_Right
   m_TagString: Untagged
@@ -1285,3 +1286,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6347009148409033902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845348535716377259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2b86c4331fbaf45b167c803691c829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

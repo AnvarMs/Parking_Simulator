@@ -9,13 +9,18 @@ public class CollideDetection : MonoBehaviour
     
     public GameObject controler, finishPanel, LoosPanel;
     public Text text;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
 
+    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        controler = GameObject.Find("Controle_Right");
+        finishPanel = GameObject.Find("Finish_Panel");
+        LoosPanel = GameObject.Find("Loos_Panel");
     }
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -43,8 +48,6 @@ public class CollideDetection : MonoBehaviour
     }
     void SetPanel()
     {
-        controler.SetActive(false);
-        finishPanel.SetActive(false);
         LoosPanel.SetActive(true);
     }
 }

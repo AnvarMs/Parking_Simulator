@@ -1,9 +1,5 @@
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class CarControler : MonoBehaviour
 {
@@ -14,7 +10,6 @@ public class CarControler : MonoBehaviour
     public Transform centerOfMass;
     public SteeringWheelUIController SteeringWheel;
 
-
     public float MotorPower;
     public float SteeringPower;
     public float BreakePower;
@@ -22,67 +17,61 @@ public class CarControler : MonoBehaviour
     public float InputMotor;
     float InputSteering;
     public float InputBreake;
-    
 
-    public bool Inbreak= false;
-    float InAccil=0,GearValue=0;
+    public bool Inbreak = false;
+    public float InAccil = 0, GearValue = 0;
     public Slider slider;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         RB.centerOfMass = centerOfMass.localPosition;
-        SteeringWheel = GameObject.Find("Canvas").GetComponentInChildren<SteeringWheelUIController>();
+        SteeringWheel = GameObject.Find("SteeringWheel").GetComponent<SteeringWheelUIController>();
+        slider = GameObject.Find("Controle_Right").GetComponentInChildren<Slider>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         GetInput();
-        AplayMotor();
-        AplaySteering();
+        ApplyMotor();
+        ApplySteering();
         MeshUpdate();
-        AplayBrake();
-
+        ApplyBrake();
     }
 
-    public void Accilerater(float value)
-    {
-        InAccil=value;
-    }
     void GetInput()
     {
         GearValue = slider.value;
-
-
-        InputMotor =Mathf.Lerp(0, GearValue==0? InAccil:GearValue==2?-InAccil:0,0.5f);
-       InputSteering= SteeringWheel.GetSteeringInput();
-
-
+        
+        
+        InputMotor = Mathf.Lerp(0, GearValue == 0 ? InAccil : GearValue == 2 ? -InAccil : 0, 0.5f);
+        InputSteering = SteeringWheel.GetSteeringInput();
 
         float MotorDir = Vector3.Dot(transform.forward, RB.velocity);
-        if(MotorDir < -.5f&& InputMotor>.5f)
+        if (MotorDir < -.5f && InputMotor > .5f)
         {
             InputBreake = Mathf.Abs(InputMotor);
-        }else if(MotorDir >.5f && InputMotor < 0)
-        {
-            InputBreake= Mathf.Abs(InputMotor);
         }
-        else
+        else if (MotorDir > .5f && InputMotor < 0)
+        {
+            InputBreake = Mathf.Abs(InputMotor);
+        }
+        else if (GearValue == 3)
+        {
+            InputBreake = 1;
+        }
+        else 
         {
             InputBreake = Inbreak ? 1 : 0;
         }
-       
-
-
     }
-    void AplayMotor()
+
+    void ApplyMotor()
     {
         RL_Wheel_Collider.motorTorque = MotorPower * InputMotor;
         RR_Wheel_Collider.motorTorque = MotorPower * InputMotor;
     }
 
-    void AplaySteering()
+    void ApplySteering()
     {
         FL_Wheel_Collider.steerAngle = SteeringPower * InputSteering;
         FR_Wheel_Collider.steerAngle = SteeringPower * InputSteering;
@@ -94,31 +83,20 @@ public class CarControler : MonoBehaviour
         UpdateMesh(FR_Wheel_Collider, FR_Wheel);
         UpdateMesh(RL_Wheel_Collider, RL_Wheel);
         UpdateMesh(RR_Wheel_Collider, RR_Wheel);
-
     }
 
-    private void UpdateMesh(WheelCollider coldr,GameObject mesh)
+    private void UpdateMesh(WheelCollider coldr, GameObject mesh)
     {
-        Quaternion rotate;
-        Vector3 pos;
-        coldr.GetWorldPose(out pos, out rotate);
+        coldr.GetWorldPose(out Vector3 pos, out Quaternion rotate);
         mesh.transform.position = pos;
-
-        mesh.transform.rotation=rotate;
+        mesh.transform.rotation = rotate;
     }
 
-    private void AplayBrake()
+    private void ApplyBrake()
     {
         FL_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .7f;
         FR_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .7f;
-
         RL_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
         RR_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
     }
-    public void BreakLeverPress(bool value)
-    {
-        Inbreak = value;
-    }
-    
-
 }

@@ -24,9 +24,11 @@ public class ParkingCheck : MonoBehaviour
         LoosPanel = GameObject.Find("Loos_Panel");
         Controler = GameObject.Find("Controle_Right");
         animator = FinishPanel.GetComponent<Animator>();
-        GameObject pl = GameObject.Find("sport_car_Player 1");
+        GameObject pl = GameObject.FindGameObjectWithTag("Player");
         carCollider = pl.GetComponent<Collider>();
+
         
+
         FinishPanel.SetActive(false);
         LoosPanel.SetActive(false);
         Controler.SetActive(true);
