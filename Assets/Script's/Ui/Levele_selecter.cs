@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,9 +9,11 @@ public class SwipeMenu : MonoBehaviour
     private float scrollPos = 0;
     private float[] pos;
 
+    private Touchscreen touchscreen;
+
     // Use this for initialization
 
-    void Start()
+    void Awake()
     {
         int childCount = transform.childCount;
         pos = new float[childCount];
@@ -21,15 +22,16 @@ public class SwipeMenu : MonoBehaviour
         {
             pos[i] = distance * i;
         }
+        touchscreen = Touchscreen.current;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.touchCount > 0)
+        
+        if (touchscreen != null  )
         {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+            if (touchscreen.touches.Count > 0)
             {
                 scrollPos = scrollbar.GetComponent<Scrollbar>().value;
             }

@@ -379,39 +379,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5774854912811888481}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.65238106, z: 0.28428173}
-  m_Size: 4.574767
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4545985359007114479}
-    - renderer: {fileID: 4523000931472489098}
-    - renderer: {fileID: 3521818259084775115}
-    - renderer: {fileID: 6001549524916533641}
-    - renderer: {fileID: 5690687799381897450}
-    - renderer: {fileID: 5825681481587133813}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4545985359007114479}
-    - renderer: {fileID: 4523000931472489098}
-    - renderer: {fileID: 3521818259084775115}
-    - renderer: {fileID: 6001549524916533641}
-    - renderer: {fileID: 5690687799381897450}
-    - renderer: {fileID: 5825681481587133813}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4545985359007114479}
-    - renderer: {fileID: 4523000931472489098}
-    - renderer: {fileID: 3521818259084775115}
-    - renderer: {fileID: 6001549524916533641}
-    - renderer: {fileID: 5690687799381897450}
-    - renderer: {fileID: 5825681481587133813}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &-9182189166170190064
 BoxCollider:

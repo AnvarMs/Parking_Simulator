@@ -463,42 +463,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3784055455364833041}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.0000012218952, y: 0.4002036, z: 0.15913635}
-  m_Size: 1.8317875
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 523121409844196495}
-    - renderer: {fileID: 6607158920740525215}
-    - renderer: {fileID: 6513085714422926074}
-    - renderer: {fileID: 6073049796385423035}
-    - renderer: {fileID: 4030164144817981945}
-    - renderer: {fileID: 1763126342598036021}
-    - renderer: {fileID: 3053071069460725914}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 523121409844196495}
-    - renderer: {fileID: 6607158920740525215}
-    - renderer: {fileID: 6513085714422926074}
-    - renderer: {fileID: 6073049796385423035}
-    - renderer: {fileID: 4030164144817981945}
-    - renderer: {fileID: 1763126342598036021}
-    - renderer: {fileID: 3053071069460725914}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 523121409844196495}
-    - renderer: {fileID: 6607158920740525215}
-    - renderer: {fileID: 6513085714422926074}
-    - renderer: {fileID: 6073049796385423035}
-    - renderer: {fileID: 4030164144817981945}
-    - renderer: {fileID: 1763126342598036021}
-    - renderer: {fileID: 3053071069460725914}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &-2584603059010241949
 BoxCollider:

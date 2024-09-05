@@ -213,39 +213,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3182602661552844321}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.65238106, z: 0.28428173}
-  m_Size: 4.574767
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4834634168782382511}
-    - renderer: {fileID: 4812776603781053386}
-    - renderer: {fileID: 5543514136152379275}
-    - renderer: {fileID: 3406778292921170121}
-    - renderer: {fileID: 3672656734289998250}
-    - renderer: {fileID: 3230908052178799669}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4834634168782382511}
-    - renderer: {fileID: 4812776603781053386}
-    - renderer: {fileID: 5543514136152379275}
-    - renderer: {fileID: 3406778292921170121}
-    - renderer: {fileID: 3672656734289998250}
-    - renderer: {fileID: 3230908052178799669}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 4834634168782382511}
-    - renderer: {fileID: 4812776603781053386}
-    - renderer: {fileID: 5543514136152379275}
-    - renderer: {fileID: 3406778292921170121}
-    - renderer: {fileID: 3672656734289998250}
-    - renderer: {fileID: 3230908052178799669}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &440133798379601585
 BoxCollider:

@@ -7,6 +7,8 @@ using UnityEngine.EventSystems;
 public class MobileCameraController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
+    public float XSensityvity = 6f;
+    public float YSensityvity = 0.05f;
     private Transform carTransform;
     private Vector2 touchDelta;
 
@@ -58,8 +60,8 @@ public class MobileCameraController : MonoBehaviour
     private void HandleCameraRotation()
     {
         touchDelta = touchDeltaAction.ReadValue<Vector2>();
-        freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * 1.5f; // Adjust sensitivity as needed
-        freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * 0.05f;
+        freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * XSensityvity; // Adjust sensitivity as needed
+        freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * YSensityvity;
     }
 
     private bool IsPointerOverUIObject()

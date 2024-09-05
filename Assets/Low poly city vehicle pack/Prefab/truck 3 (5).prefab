@@ -297,54 +297,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4785886506388050597}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 1.4840822, z: -1.0862651}
-  m_Size: 9.370512
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6681063653804117294}
-    - renderer: {fileID: 4936735400782699311}
-    - renderer: {fileID: 3159466731787715676}
-    - renderer: {fileID: 9113978599011163758}
-    - renderer: {fileID: 6469602314491981065}
-    - renderer: {fileID: 4798163091505852593}
-    - renderer: {fileID: 4830374694909460838}
-    - renderer: {fileID: 205012867961079608}
-    - renderer: {fileID: 7551500503082686375}
-    - renderer: {fileID: 7055176119429359521}
-    - renderer: {fileID: 1079228017158900365}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6681063653804117294}
-    - renderer: {fileID: 4936735400782699311}
-    - renderer: {fileID: 3159466731787715676}
-    - renderer: {fileID: 9113978599011163758}
-    - renderer: {fileID: 6469602314491981065}
-    - renderer: {fileID: 4798163091505852593}
-    - renderer: {fileID: 4830374694909460838}
-    - renderer: {fileID: 205012867961079608}
-    - renderer: {fileID: 7551500503082686375}
-    - renderer: {fileID: 7055176119429359521}
-    - renderer: {fileID: 1079228017158900365}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 6681063653804117294}
-    - renderer: {fileID: 4936735400782699311}
-    - renderer: {fileID: 3159466731787715676}
-    - renderer: {fileID: 9113978599011163758}
-    - renderer: {fileID: 6469602314491981065}
-    - renderer: {fileID: 4798163091505852593}
-    - renderer: {fileID: 4830374694909460838}
-    - renderer: {fileID: 205012867961079608}
-    - renderer: {fileID: 7551500503082686375}
-    - renderer: {fileID: 7055176119429359521}
-    - renderer: {fileID: 1079228017158900365}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &6692964936236519409
 BoxCollider:

@@ -631,39 +631,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6850066304912483601}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.65238106, z: 0.28428173}
-  m_Size: 4.574767
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8202465247180111051}
-    - renderer: {fileID: 8428743045646108103}
-    - renderer: {fileID: 8084831432947782498}
-    - renderer: {fileID: 7014961845014776630}
-    - renderer: {fileID: 7243703495855449940}
-    - renderer: {fileID: 6213421869286167961}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8202465247180111051}
-    - renderer: {fileID: 8428743045646108103}
-    - renderer: {fileID: 8084831432947782498}
-    - renderer: {fileID: 7014961845014776630}
-    - renderer: {fileID: 7243703495855449940}
-    - renderer: {fileID: 6213421869286167961}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 8202465247180111051}
-    - renderer: {fileID: 8428743045646108103}
-    - renderer: {fileID: 8084831432947782498}
-    - renderer: {fileID: 7014961845014776630}
-    - renderer: {fileID: 7243703495855449940}
-    - renderer: {fileID: 6213421869286167961}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &3806482355354882849
 BoxCollider:
@@ -738,7 +735,6 @@ MonoBehaviour:
   CorrentTransform: {fileID: 0}
   reachDistence: 4
   reverseDistence: 10
-  size: 1.2
   position: {fileID: 2235246584815493193}
   layerMask:
     serializedVersion: 2
@@ -757,6 +753,9 @@ MonoBehaviour:
   SteeringPower: 40
   BreakePower: 10000
   Inbreak: 0
+  rayZpose: 0.5
+  raylength: 3
+  rayXpose: 1
 --- !u!1 &7381753565029742124
 GameObject:
   m_ObjectHideFlags: 0

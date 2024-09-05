@@ -1,95 +1,124 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CarSoundController : MonoBehaviour
 {
-    public Text text;
-    public AudioSource engineIdleSource;
-    public AudioSource engineAccelerationSource;
-    public AudioSource engineDecelerationSource;
-    public AudioSource brakeSource;
+    public Text speedText;
+    public AudioSource IdleSource;
+    public AudioSource low_off;
+    public AudioSource low_on;
+    public AudioSource mid_off;
+    public AudioSource mid_on;
+    public AudioSource high_off;
+    public AudioSource high_on;
+    public AudioSource enginePopSource;
 
+    public Rigidbody carRigidbody;
+    private CarControler carController;
 
-    public Rigidbody carRG;
-    private CarControler carControler;
     private float speed;
+    private int currentGear = 0;
+    private float pitchMultiplier = 1.5f;
+    private float gearShiftDelay = 1f;
+    private float lastGearShiftTime;
 
+    private float[] gearRatios = new float[] { 1.0f, 2.0f, 3.0f, 4.0f }; // Simplified gear ratios
+    private float minPitch = 0.2f;
     private float maxPitch = 2.0f;
-    private float minPitch = 1.0f;
-    // Start is called before the first frame update
+
     void Start()
     {
-        carRG = GetComponent<Rigidbody>();
-        carControler = GetComponent<CarControler>();
+        carRigidbody = GetComponent<Rigidbody>();
+        carController = GetComponent<CarControler>();
 
-        engineIdleSource.Play();
-        engineAccelerationSource.Play();
-        engineDecelerationSource.Play();
-        brakeSource.Play();
-
-        engineIdleSource.loop = true;
-        engineAccelerationSource.loop = true;
-        engineDecelerationSource.loop = true;
-        brakeSource.loop = true;
-
-        engineIdleSource.volume = 1.0f;
-        engineAccelerationSource.volume = 0.0f;
-        engineDecelerationSource.volume = 0.0f;
-        brakeSource.volume = 0.0f;
+        // Play idle sound
+        IdleSource.Play();
+        PauseAllEngineSounds();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        AudioControler();
+        UpdateSpeed();
+        UpdateGear();
+        UpdateEngineSounds();
     }
 
-
-    private void AudioControler()
+    private void UpdateSpeed()
     {
-        speed = carRG.velocity.magnitude;
-        float enginePitch = Mathf.Lerp(minPitch, maxPitch, speed / 100.0f);
-        engineIdleSource.pitch = enginePitch;
-        engineAccelerationSource.pitch = enginePitch;
-        engineDecelerationSource.pitch = enginePitch;
-
-        float acceleration = carControler.InputMotor;
-        if (acceleration > 0)
+        speed = carRigidbody.velocity.magnitude * 3.6f; // Convert from m/s to km/h
+        
+        if (speedText != null)
         {
-            engineIdleSource.volume = 0.0f;
-            engineAccelerationSource.volume = Mathf.Lerp(engineAccelerationSource.volume, 1.0f, Time.deltaTime * 2);
-            engineDecelerationSource.volume = 0.0f;
+            speedText.text = "Speed: " + Mathf.Round(speed) + " km/h";
         }
-        else if (acceleration < 0)
+    }
+
+    private void UpdateGear()
+    {
+        float acceleration = carController.InputMotor;
+
+        if (acceleration > 0.1f && Time.time > lastGearShiftTime + gearShiftDelay)
         {
-            engineIdleSource.volume = 0.0f;
-            engineAccelerationSource.volume = 0.0f;
-            engineDecelerationSource.volume = Mathf.Lerp(engineDecelerationSource.volume, 1.0f, Time.deltaTime * 2);
+            if (currentGear < gearRatios.Length - 1)
+            {
+                currentGear++;
+                lastGearShiftTime = Time.time;
+            }
+        }
+        else if (acceleration < 0.1f && Time.time > lastGearShiftTime + gearShiftDelay)
+        {
+            if (currentGear > 0)
+            {
+                currentGear--;
+                lastGearShiftTime = Time.time;
+            }
+        }
+    }
+
+    private void UpdateEngineSounds()
+    {
+        float pitch = Mathf.Lerp(minPitch, maxPitch, speed / (gearRatios[currentGear] * 100f)) * pitchMultiplier;
+
+        IdleSource.pitch = Mathf.Lerp(maxPitch, minPitch, speed / 40f);
+
+        if (speed < 50f)
+        {
+            PlayEngineSound(low_on, low_off, pitch);
+        }
+        else if (speed < 60f)
+        {
+            PlayEngineSound(mid_on, mid_off, pitch);
         }
         else
         {
-            engineIdleSource.volume = Mathf.Lerp(engineIdleSource.volume, 1.0f, Time.deltaTime * 2);
-            engineAccelerationSource.volume = 0.0f;
-            engineDecelerationSource.volume = 0.0f;
+            PlayEngineSound(high_on, high_off, pitch);
         }
 
-        /*float MotorDir = Vector3.Dot(transform.forward, RB.velocity);
-        if (MotorDir < -.5f && carControler.InputMotor > .5f)
+        // Optional: Engine pop sound for realism
+        if (speed > 10f && enginePopSource != null && !enginePopSource.isPlaying)
         {
-            InputBreake = Mathf.Abs(InputMotor);
+            enginePopSource.Play();
         }
-        else if (MotorDir > .5f && carControler.InputMotor < 0)
+    }
+
+    private void PlayEngineSound(AudioSource onSource, AudioSource offSource, float pitch)
+    {
+        onSource.pitch = pitch;
+        if (!onSource.isPlaying)
         {
-            InputBreake = Mathf.Abs(InputMotor);
+            onSource.Play();
         }
-        else
-        {
-            InputBreake = carControler.Inbreak ? 1 : 0;
-        }*/
+
+        offSource.Pause();
+    }
+
+    private void PauseAllEngineSounds()
+    {
+        low_off.Pause();
+        low_on.Pause();
+        mid_off.Pause();
+        mid_on.Pause();
+        high_off.Pause();
+        high_on.Pause();
     }
 }

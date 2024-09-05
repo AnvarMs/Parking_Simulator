@@ -379,39 +379,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6652824629472721096}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.36660203, z: -0.012397051}
-  m_Size: 1.1631356
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3702353257303929670}
-    - renderer: {fileID: 3653297055365803299}
-    - renderer: {fileID: 4366222516513479010}
-    - renderer: {fileID: 6862986980480970272}
-    - renderer: {fileID: 4795930451395749699}
-    - renderer: {fileID: 6678566959399836380}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3702353257303929670}
-    - renderer: {fileID: 3653297055365803299}
-    - renderer: {fileID: 4366222516513479010}
-    - renderer: {fileID: 6862986980480970272}
-    - renderer: {fileID: 4795930451395749699}
-    - renderer: {fileID: 6678566959399836380}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3702353257303929670}
-    - renderer: {fileID: 3653297055365803299}
-    - renderer: {fileID: 4366222516513479010}
-    - renderer: {fileID: 6862986980480970272}
-    - renderer: {fileID: 4795930451395749699}
-    - renderer: {fileID: 6678566959399836380}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &887190223821214440
 BoxCollider:

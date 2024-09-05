@@ -1,17 +1,21 @@
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CarSelecter : MonoBehaviour
 {
-    public GameObject[] carPrefabs; // Array to hold car prefabs
+    public GameObject[] carPrefabs;// Array to hold car prefabs
+    public Image[] images;
     private GameObject selectedCar;
     public Transform spawnPoint; // Corrected spelling for consistency
     public CinemachineVirtualCamera virtualCamera;
+    public Image image;
+  
     private int index;
 
     private void Start()
     {
-        index = 0;
+        index = PlayerPrefs.GetInt("SelectedCarIndex");
         selectedCar = Instantiate(carPrefabs[index], spawnPoint.position, spawnPoint.rotation);
         virtualCamera.LookAt = selectedCar.transform;
         virtualCamera.Follow = selectedCar.transform;
@@ -45,4 +49,18 @@ public class CarSelecter : MonoBehaviour
         virtualCamera.LookAt = selectedCar.transform;
         virtualCamera.Follow = selectedCar.transform;
     }
+    private void Update()
+    {
+        if (PlayerPrefs.GetInt("SelectedCarIndex") != index)
+        {
+            PlayerPrefs.SetInt("SelectedCarIndex", index);
+            PlayerPrefs.Save();
+        }
+    }
+
+    public void updatetheImage()
+    {
+
+    }
+
 }

@@ -214,42 +214,36 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132571425359735506}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0, y: 0.37920597, z: 0.121515036}
-  m_Size: 2.0829346
+  m_LocalReferencePoint: {x: 0, y: 0.3292399, z: 0.04822433}
+  m_Size: 2.163013
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.6
+  - screenRelativeHeight: 0.07505723
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3339771157501657420}
-    - renderer: {fileID: 8262583604691575132}
-    - renderer: {fileID: 8320647675343601465}
-    - renderer: {fileID: 9033110997943896952}
-    - renderer: {fileID: 2230905678522039354}
-    - renderer: {fileID: 235717687537038681}
-    - renderer: {fileID: 2118090312750975174}
-  - screenRelativeHeight: 0.3
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.041550625
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3339771157501657420}
-    - renderer: {fileID: 8262583604691575132}
-    - renderer: {fileID: 8320647675343601465}
-    - renderer: {fileID: 9033110997943896952}
-    - renderer: {fileID: 2230905678522039354}
-    - renderer: {fileID: 235717687537038681}
-    - renderer: {fileID: 2118090312750975174}
-  - screenRelativeHeight: 0.1
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+  - screenRelativeHeight: 0.021598147
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 3339771157501657420}
-    - renderer: {fileID: 8262583604691575132}
-    - renderer: {fileID: 8320647675343601465}
-    - renderer: {fileID: 9033110997943896952}
-    - renderer: {fileID: 2230905678522039354}
-    - renderer: {fileID: 235717687537038681}
-    - renderer: {fileID: 2118090312750975174}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
+    - renderer: {fileID: 0}
   m_Enabled: 1
 --- !u!65 &5338936103146677957
 BoxCollider:
