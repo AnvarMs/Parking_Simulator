@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef97902bc8c092447a0494d07a7b6ccb, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  playerName: Player
+  currency: 0
+  cars:
+  - carID: 0
+    isPurchased: 1
+  - carID: 1
+    isPurchased: 0
+  - carID: 2
+    isPurchased: 0
+  levels:
+  - level: Level 1
+    isCleared: 1
+  - level: Level 2
+    isCleared: 0
+  - level: Level 3
+    isCleared: 0
+  - level: Level 4
+    isCleared: 0
+  - level: Level 5
+    isCleared: 0
+  - level: Level 6
+    isCleared: 0
+  - level: Level 7
+    isCleared: 0
+  - level: Level 8
+    isCleared: 0
+  - level: Level 9
+    isCleared: 0
+  - level: Level 10
+    isCleared: 0
+  isLogged: 0
+  savePath: C:/Users/Anvar MS/AppData/LocalLow/Charly_DP/Parking_Simulator\parkingsimulator.json

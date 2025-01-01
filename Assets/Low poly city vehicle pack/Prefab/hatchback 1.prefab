@@ -537,10 +537,19 @@ MonoBehaviour:
   MotorPower: 50
   SteeringPower: 40
   BreakePower: 1000
+  maxMotorPower: 1500
+  acceleration: 10
+  deceleration: 8
+  maxSpeed: 50
+  brakingForce: 300
+  currentSpeed: 0
+  isBraking: 0
   Inbreak: 0
   rayZpose: 0.5
   raylength: 4
   rayXpose: 1
+  edges: []
+  ReSpawnPos: {fileID: 0}
 --- !u!65 &-8254106967937140901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -560,8 +569,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5662836, y: 1.2692229, z: 3.5697618}
-  m_Center: {x: 0.014183402, y: 0.6582629, z: 0.010592043}
+  m_Size: {x: 1.5662836, y: 1.0723454, z: 3.5697618}
+  m_Center: {x: 0.014183402, y: 0.75670165, z: 0.010591984}
 --- !u!54 &3993137675921755633
 Rigidbody:
   m_ObjectHideFlags: 0

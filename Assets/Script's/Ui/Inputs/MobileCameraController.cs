@@ -3,11 +3,12 @@ using Cinemachine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.Controls;
 
 public class MobileCameraController : MonoBehaviour
 {
     public CinemachineFreeLook freeLookCamera;
-    public float XSensityvity = 6f;
+    public float XSensityvity = 7f;
     public float YSensityvity = 0.05f;
     private Transform carTransform;
     private Vector2 touchDelta;
@@ -29,17 +30,50 @@ public class MobileCameraController : MonoBehaviour
         AssignCarTransform();
     }
 
+    private bool isTouchingUI = false; // Track if the first touch was on the UI
+
     private void Update()
     {
-        if (IsPointerOverUIObject())
+        // If no touch is detected, reset the flag
+        if (Touchscreen.current == null || Touchscreen.current.touches.Count == 0)
         {
-            return; // Skip camera rotation logic if touching UI
+            isTouchingUI = false;
+            return;
         }
 
         if (Touchscreen.current.primaryTouch.press.isPressed)
         {
-            HandleCameraRotation();
+            if (!Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+            {
+                // This is not the initial touch, continue camera rotation if the first touch was not on UI
+                if (!isTouchingUI)
+                {
+                    HandleCameraRotation();
+                }
+            }
+            else
+            {
+                // First touch detected, check if it's on the UI
+                isTouchingUI = IsPointerOverUIObject(Touchscreen.current.primaryTouch);
+            }
         }
+    }
+
+    private bool IsPointerOverUIObject(TouchControl touch)
+    {
+        // Get the current touch position
+        Vector2 touchPosition = touch.position.ReadValue();
+
+        // Create a new PointerEventData for the touch
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            position = touchPosition
+        };
+
+        // Raycast to check if the touch is over UI elements
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+        return results.Count > 0; // Return true if there's any UI element being touched
     }
 
     private void AssignCarTransform()
@@ -56,28 +90,32 @@ public class MobileCameraController : MonoBehaviour
             Debug.LogError("No car with tag 'Player' found in the scene.");
         }
     }
+private float xRotationVelocity;
+private float yRotationVelocity;
+public float smoothTime = 0.01f; 
+   
+private void HandleCameraRotation()
+{
+    // Get the current input
+    touchDelta = touchDeltaAction.ReadValue<Vector2>();
 
-    private void HandleCameraRotation()
-    {
-        touchDelta = touchDeltaAction.ReadValue<Vector2>();
-        freeLookCamera.m_XAxis.Value += touchDelta.x * Time.deltaTime * XSensityvity; // Adjust sensitivity as needed
-        freeLookCamera.m_YAxis.Value -= touchDelta.y * Time.deltaTime * YSensityvity;
-    }
+    // Calculate target rotation values based on input
+    float targetXRotation = freeLookCamera.m_XAxis.Value + touchDelta.x * Time.deltaTime * XSensityvity;
+    float targetYRotation = freeLookCamera.m_YAxis.Value - touchDelta.y * Time.deltaTime * YSensityvity;
 
-    private bool IsPointerOverUIObject()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            PointerEventData eventData = new PointerEventData(EventSystem.current)
-            {
-                position = touch.position
-            };
-            List<RaycastResult> results = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(eventData, results);
-            return results.Count > 0;
-        }
+    // Smoothly interpolate between the current rotation and the target rotation
+    freeLookCamera.m_XAxis.Value = Mathf.SmoothDamp(
+        freeLookCamera.m_XAxis.Value, 
+        targetXRotation, 
+        ref xRotationVelocity, 
+        smoothTime
+    );
 
-        return EventSystem.current.IsPointerOverGameObject();
-    }
+    freeLookCamera.m_YAxis.Value = Mathf.SmoothDamp(
+        freeLookCamera.m_YAxis.Value, 
+        targetYRotation, 
+        ref yRotationVelocity, 
+        smoothTime
+    );
+}
 }

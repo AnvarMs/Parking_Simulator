@@ -3,13 +3,18 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SwipeMenu : MonoBehaviour
+public class Levele_selecter : MonoBehaviour
 {
     public GameObject scrollbar;
     private float scrollPos = 0;
     private float[] pos;
 
     private Touchscreen touchscreen;
+    public AudioSource LevelLokedAudio;
+    public PlayerDataScriptObj playerData;
+    public Image[] Lockimages;
+    
+    
 
     // Use this for initialization
 
@@ -23,6 +28,12 @@ public class SwipeMenu : MonoBehaviour
             pos[i] = distance * i;
         }
         touchscreen = Touchscreen.current;
+
+        
+    }
+    private void OnEnable()
+    {
+        CheckTheLevelCleardAndUpdatetheLockImg();
     }
 
     // Update is called once per frame
@@ -64,6 +75,29 @@ public class SwipeMenu : MonoBehaviour
     }
     public void LoadeLeavel(string level)
     {
-        SceneManager.LoadScene(level);
+        if (playerData.isLevelClearde(level))
+        {
+            SceneManager.LoadScene(level);
+        }
+        else
+        {
+            LevelLokedAudio.Play();
+        }
+    }
+
+    void CheckTheLevelCleardAndUpdatetheLockImg()
+    {
+        for(int i = 1; i <=10; i++)
+        {
+            if(playerData.isLevelClearde("Level " + i.ToString()))
+            {
+                Lockimages[i-1].gameObject.SetActive(false);
+            }
+            else
+            {
+                Lockimages[i-1].gameObject.SetActive(true);
+            }
+
+        }
     }
 }

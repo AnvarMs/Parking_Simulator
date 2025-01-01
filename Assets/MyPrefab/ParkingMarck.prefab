@@ -148,7 +148,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2209
+  m_VersionIndex: 2212
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -268,13 +268,12 @@ MonoBehaviour:
   parkCollider: {fileID: 7706179247350364210}
   gear: {fileID: 0}
   material: {fileID: 2100000, guid: 39c8f1fe762860b459826c7f780e64a3, type: 2}
-  FinishPanel: {fileID: 976797128555149316, guid: af50bae70fda00a4f87e3da8ec6c06c4,
-    type: 3}
-  LoosPanel: {fileID: 5848035927268154675, guid: b3c2451330bf29045a8ff198a9b0c045,
-    type: 3}
+  playerData: {fileID: 11400000, guid: b78c61ccd483e0741a7a5eba985ad99f, type: 2}
+  RevardCash: 1000
+  FinishPanel: {fileID: 0}
+  LoosPanel: {fileID: 0}
   Controler: {fileID: 0}
-  animator: {fileID: 5125733923187140298, guid: af50bae70fda00a4f87e3da8ec6c06c4,
-    type: 3}
+  animator: {fileID: 0}
 --- !u!1 &6884003524430098613
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +792,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1181
+  m_VersionIndex: 1184
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

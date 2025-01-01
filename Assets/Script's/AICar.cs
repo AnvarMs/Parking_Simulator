@@ -1,12 +1,15 @@
 using UnityEngine;
 
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class AICar : MonoBehaviour
 {
     
     public List<Transform> waypoints;
     public Transform CorrentTransform;
+    private Transform spowrnTransform;
     public Graph graph;
     Queue<Transform> queue;
     public float reachDistence = 3f;
@@ -24,7 +27,16 @@ public class AICar : MonoBehaviour
     public float SteeringPower;
     public float BreakePower;
 
-     float InputMotor;
+    public float maxMotorPower = 1500f; // Max power applied to the motor
+    public float acceleration = 10f;  // Acceleration factor
+    public float deceleration = 8f;  // Deceleration factor
+    public float maxSpeed = 50f; // Maximum speed in units like km/h or m/s
+    public float brakingForce = 300f; // Braking force applied to the wheels
+    public float currentSpeed; // Current speed of the car
+    public bool isBraking; // Flag to detect if braking
+
+
+    float InputMotor;
      float InputSteering;
      float InputBreake;
      float distence;
@@ -36,11 +48,19 @@ public class AICar : MonoBehaviour
     public float raylength = 3f;
     public float rayXpose = 1f;
 
+    // Edge Data (to be loaded dynamically or configured via Unity)
+    [System.Serializable]
+    public class EdgeData
+    {
+        public int startNode;
+        public int endNode;
+    }
+    public List<EdgeData> edges;
 
-
-
+    public Transform ReSpawnPos;
     void Start()
     {
+        spowrnTransform = CorrentTransform;
         InputSteering = 0;
         RB.centerOfMass = centerOfMass.localPosition;
         graph = new Graph();
@@ -51,31 +71,16 @@ public class AICar : MonoBehaviour
         {
             graph.AddVertex(t);
         }
+        foreach (EdgeData edge in edges)
+        {
 
-        graph.AddEdge(waypoints[0], waypoints[1]);
+            graph.AddEdge(waypoints[edge.startNode], waypoints[edge.endNode]);
 
-        graph.AddEdge(waypoints[1], waypoints[2]);
-        graph.AddEdge(waypoints[1], waypoints[3]);
-     
-        graph.AddEdge(waypoints[2], waypoints[4]);
-        
-        graph.AddEdge(waypoints[4], waypoints[5]);
-        graph.AddEdge(waypoints[4], waypoints[3]);
-      
-        graph.AddEdge(waypoints[5], waypoints[6]);
-       
-        graph.AddEdge(waypoints[6], waypoints[7]);
-        graph.AddEdge(waypoints[6], waypoints[3]);
-        
-        graph.AddEdge(waypoints[7], waypoints[8]);
-
-        graph.AddEdge(waypoints[8], waypoints[0]);
-        graph.AddEdge(waypoints[8], waypoints[3]);
-
-
-
-
+        }
+        flaspwan = false;
     }
+
+   
 
     void FixedUpdate()
     {
@@ -86,6 +91,8 @@ public class AICar : MonoBehaviour
         AplayBrake();
         AiSencers();
     }
+
+    bool flaspwan;
 
     void AiSencers()
     {
@@ -105,16 +112,25 @@ public class AICar : MonoBehaviour
         Vector3 left30DegDirection = Quaternion.AngleAxis(-30, Vector3.up) * transform.forward;
 
         // Forward sensor
-        if (Physics.Raycast(forwardSensorPos, transform.forward, out hit, raylength, layerMask))
+        if (Physics.Raycast(forwardSensorPos, transform.forward, out hit, raylength, layerMask) )
         {
             isObstacleDetected = true;
             Debug.DrawLine(forwardSensorPos, hit.point, Color.red);
             InputMotor = 0;
             InputBreake = 1;
+
+            if (!flaspwan)
+            {
+                RespownetheCar();
+                flaspwan = true;
+               
+            }
         }
         else
         {
             Debug.DrawLine(forwardSensorPos, forwardSensorPos + transform.forward * raylength, Color.green);
+            InputMotor = 1;
+            InputBreake = 0;
         }
 
         // Forward right sensor
@@ -171,8 +187,8 @@ public class AICar : MonoBehaviour
         {
             isObstacleDetected = true;
             Debug.DrawLine(downSensorPos, hit.point, Color.red);
-            InputMotor = 0;
-            InputBreake = 1;
+           // InputMotor = 0;
+           // InputBreake = 1;
         }
         else
         {
@@ -264,36 +280,87 @@ void GetInput()
 
     void SelectTheNode()
     {
+        // Get the list of neighbors
+        List<Transform> neighbors = graph.GetNeighbors(CorrentTransform);
 
-        
-        List<Transform> ls = graph.GetNeighbors(CorrentTransform);
-        
-        // Get a random index
-         int randomIndex = Random.Range(0, ls.Count);
-        while (queue.Contains(ls[randomIndex]))
+        // Check if there are neighbors to select from
+        if (neighbors == null || neighbors.Count == 0)
         {
-            randomIndex = Random.Range(0, ls.Count);
+            Debug.LogError("No neighbors found for the current node. Ensure that the graph has been correctly set up.");
+            return;
         }
-        // Retrieve the random value from the list
-        queue.Enqueue(CorrentTransform);
-        CorrentTransform = ls[randomIndex];
 
-        if(queue.Count > 2)
+        // Get a random index within the bounds of the neighbors list
+        int randomIndex = Random.Range(0, neighbors.Count);
+
+        // Ensure the selected node hasn't been used recently
+        while (queue.Contains(neighbors[randomIndex]))
+        {
+            randomIndex = Random.Range(0, neighbors.Count);
+        }
+
+        // Enqueue the current node and move to the selected neighbor
+        queue.Enqueue(CorrentTransform);
+        CorrentTransform = neighbors[randomIndex];
+
+        // Limit the queue size to 2
+        if (queue.Count > 2)
         {
             queue.Dequeue();
         }
 
-
+       
     }
 
 
 
+
+
+   
 
     void AplayMotor()
     {
-        RL_Wheel_Collider.motorTorque = MotorPower * InputMotor;
-        RR_Wheel_Collider.motorTorque = MotorPower * InputMotor;
+        
+        // Calculate current speed in km/h or m/s based on your wheel's angular velocity
+        currentSpeed = RL_Wheel_Collider.rpm * (RL_Wheel_Collider.radius * 2 * Mathf.PI * 60 / 1000); // Example calculation in km/h
+
+        // If the car is braking
+        if (isBraking)
+        {
+            // Apply negative torque to simulate braking
+            RL_Wheel_Collider.motorTorque = -brakingForce;
+            RR_Wheel_Collider.motorTorque = -brakingForce;
+        }
+        else if (InputMotor > 0)  // If accelerating
+        {
+            // Accelerate the car, but limit torque if speed is reaching the max speed
+            if (currentSpeed < maxSpeed)
+            {
+                RL_Wheel_Collider.motorTorque = Mathf.Clamp(MotorPower * InputMotor, 0, maxMotorPower);
+                RR_Wheel_Collider.motorTorque = Mathf.Clamp(MotorPower * InputMotor, 0, maxMotorPower);
+            }
+            else
+            {
+                // If max speed is reached, apply no additional torque
+                RL_Wheel_Collider.motorTorque = 0;
+                RR_Wheel_Collider.motorTorque = 0;
+            }
+        }
+        else if (InputMotor == 0)  // Decelerate naturally when no input
+        {
+            RL_Wheel_Collider.motorTorque = 0;  // No motor torque
+            RR_Wheel_Collider.motorTorque = 0;
+
+            // You can also apply additional logic for automatic deceleration or drag
+            currentSpeed -= deceleration * Time.deltaTime;
+        }
+
+        // Debugging speed output
+      
+           
+        
     }
+
 
     void AplaySteering()
     {
@@ -328,7 +395,20 @@ void GetInput()
         RL_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
         RR_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
     }
-
-    
+     IEnumerator CheckDealy()
+    {
+        yield return new WaitForSeconds(5);
+        
+        transform.position = ReSpawnPos.position;
+        transform.rotation = ReSpawnPos.rotation;
+        CorrentTransform = spowrnTransform;
+        queue.Clear();
+        flaspwan = false;
+    }
+    private void RespownetheCar()
+    {
+        StartCoroutine(CheckDealy());
+        
+    } 
 
 }

@@ -333,7 +333,7 @@ Transform:
   m_GameObject: {fileID: 3110270502370199958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.23, z: 3.076}
+  m_LocalPosition: {x: 0, y: 0.431, z: 3.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -423,7 +423,7 @@ LODGroup:
     - renderer: {fileID: 0}
     - renderer: {fileID: 0}
     - renderer: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &2409742670991189547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,13 +446,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   CorrentTransform: {fileID: 0}
   reachDistence: 4
-  reverseDistence: 10
+  reverseDistence: 5
   position: {fileID: 1684598440978595165}
   layerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 200
   FL_Wheel: {fileID: 9134806182880623609}
   FR_Wheel: {fileID: 5802413860210355686}
   RL_Wheel: {fileID: 1711558735061109111}
@@ -463,13 +464,44 @@ MonoBehaviour:
   RR_Wheel_Collider: {fileID: 6961495876947368604}
   RB: {fileID: 2832813979602592049}
   centerOfMass: {fileID: 3527678147526735420}
-  MotorPower: 50
+  MotorPower: 700
   SteeringPower: 40
   BreakePower: 10000
+  maxMotorPower: 700
+  acceleration: 3
+  deceleration: 2
+  maxSpeed: 0.5
+  brakingForce: 3000
+  currentSpeed: 0
+  isBraking: 0
   Inbreak: 0
   rayZpose: 0.5
   raylength: 4
   rayXpose: 1
+  edges:
+  - startNode: 0
+    endNode: 1
+  - startNode: 1
+    endNode: 2
+  - startNode: 2
+    endNode: 3
+  - startNode: 3
+    endNode: 4
+  - startNode: 4
+    endNode: 5
+  - startNode: 5
+    endNode: 6
+  - startNode: 6
+    endNode: 7
+  - startNode: 7
+    endNode: 8
+  - startNode: 8
+    endNode: 9
+  - startNode: 9
+    endNode: 0
+  - startNode: 8
+    endNode: 9
+  ReSpawnPos: {fileID: 0}
 --- !u!65 &5535281801121555494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -489,8 +521,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5662836, y: 1.2692229, z: 3.5697618}
-  m_Center: {x: 0.014183402, y: 0.6582629, z: 0.010592043}
+  m_Size: {x: 1.3637692, y: 1.0754664, z: 3.411257}
+  m_Center: {x: 0.03152731, y: 0.75514114, z: -0.0686605}
 --- !u!54 &2832813979602592049
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -499,7 +531,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252526846994360205}
   serializedVersion: 4
-  m_Mass: 2000
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

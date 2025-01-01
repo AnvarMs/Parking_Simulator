@@ -17,6 +17,7 @@ public class CarControler : MonoBehaviour
     public float InputMotor;
     float InputSteering;
     public float InputBreake;
+    public float dragForce = 25f;
 
     public bool Inbreak = false;
     public float InAccil = 0, GearValue = 0;
@@ -36,6 +37,7 @@ public class CarControler : MonoBehaviour
         ApplySteering();
         MeshUpdate();
         ApplyBrake();
+        ApplyDrag();
     }
 
     void GetInput()
@@ -47,11 +49,11 @@ public class CarControler : MonoBehaviour
         InputSteering = SteeringWheel.GetSteeringInput();
 
         float MotorDir = Vector3.Dot(transform.forward, RB.velocity);
-        if (MotorDir < -.5f && InputMotor > .5f)
+        if (MotorDir < -0.5f && InputMotor > 0.5f)
         {
             InputBreake = Mathf.Abs(InputMotor);
         }
-        else if (MotorDir > .5f && InputMotor < 0)
+        else if (MotorDir > 0.5f && InputMotor < 0)
         {
             InputBreake = Mathf.Abs(InputMotor);
         }
@@ -98,5 +100,18 @@ public class CarControler : MonoBehaviour
         FR_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .7f;
         RL_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
         RR_Wheel_Collider.brakeTorque = InputBreake * BreakePower * .3f;
+    }
+    void ApplyDrag()
+    {
+        // If not accelerating and not braking
+        if (Mathf.Abs(InputMotor) < 0.1f && InputBreake == 0)
+        {
+            // Apply drag proportional to current velocity
+            float velocityMagnitude = RB.velocity.magnitude;
+
+            // Apply reverse force to simulate drag
+            RL_Wheel_Collider.motorTorque = -dragForce * velocityMagnitude;
+            RR_Wheel_Collider.motorTorque = -dragForce * velocityMagnitude;
+        }
     }
 }

@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
  
+    
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1;
     }
     public void LoadCorentScene()
     {
@@ -19,6 +21,15 @@ public class GameManager : MonoBehaviour
 
         // Load the current scene by index
         SceneManager.LoadScene(sceneIndex);
-
+        Time.timeScale = 1;
     }
+
+
+    public void setFalseOrTrue(GameObject obj)
+    {
+        obj.SetActive(!obj.activeSelf);
+    }
+    
+
+    
 }

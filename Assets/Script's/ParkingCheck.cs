@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ParkingCheck : MonoBehaviour
@@ -9,6 +10,8 @@ public class ParkingCheck : MonoBehaviour
     public Collider parkCollider;
     public Slider gear;
     public Material material;
+    public PlayerDataScriptObj playerData;
+    public int RevardCash=1000;
     [Header("Game states")]
     public GameObject FinishPanel, LoosPanel, Controler;
 
@@ -16,6 +19,7 @@ public class ParkingCheck : MonoBehaviour
     public Animator animator;
     private bool IsParked;
     float Ctime = 0;
+    bool IsDone = false;  
     // Start is called before the first frame update
     void Start()
     {
@@ -47,19 +51,44 @@ public class ParkingCheck : MonoBehaviour
             material.color = Color.green;
             if (gear.value == 3)
             {
-               Controler.SetActive(false);
+                Controler.SetActive(false);
                 FinishPanel.SetActive(true);
                 animator.SetBool("finish", true);
+
+                if (!IsDone)
+                {                  
+                   LevelUpdate();
+                    
+                    IsDone = true;
+                }
+                
             }
         }
         else
         {
             BlingTheParkingMark();
+            IsDone = false;
         }
         
           
         
     }
+
+    void LevelUpdate()
+    {
+        playerData.Currency += RevardCash; // Assuming RevardCash is a defined variable
+        string LevelName = SceneManager.GetActiveScene().name;
+
+        // Get the last character of LevelName, and subtract '0' to convert it to an integer
+        int levelint = LevelName[LevelName.Length - 1] - '0'+1;
+
+        // Check if the level number is valid (1 to 10)
+        if (levelint > 0 && levelint < 10)
+        {
+            playerData.LevelCleared("Level " + levelint.ToString());
+        }
+    }
+
 
     public bool CheckIsParked(Collider carCollider, Collider parkCollider)
     {

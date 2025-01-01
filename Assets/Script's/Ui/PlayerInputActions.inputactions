@@ -9,16 +9,16 @@
                     "name": "TouchPosition",
                     "type": "Button",
                     "id": "57c32ec3-245d-4a73-8d92-a1c8b400e3e7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "TouchDelta",
                     "type": "Button",
-                    "id": "beafb8bf-a65f-4ea3-bf58-2b67973e446f",
-                    "expectedControlType": "Button",
+                    "id": "f31a1caa-8a71-4247-b441-f0a5700b81fe",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -38,7 +38,7 @@
                 },
                 {
                     "name": "",
-                    "id": "b01a717f-9064-44f5-8b41-e88fdde4c1e2",
+                    "id": "547463cd-1789-4a22-871a-556e7d679069",
                     "path": "<Touchscreen>/delta",
                     "interactions": "",
                     "processors": "",
